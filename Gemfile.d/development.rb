@@ -19,6 +19,15 @@ group :development do
   gem 'letter_opener', '1.7.0'
   gem 'spring', '2.1.1'
   gem 'spring-commands-rspec', '1.0.4'
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-passenger', '>= 0.1.1'
+
+  # Remove the following if your app does not use Rails
+  gem 'capistrano-rails'
+
+  # Remove the following if your server does not use RVM
+  gem 'capistrano-rvm'
 
   # Option to DISABLE_RUBY_DEBUGGING is helpful IDE-based debugging.
   # The ruby debug gems conflict with the IDE-based debugger gem.
