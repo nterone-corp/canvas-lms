@@ -7,6 +7,16 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
+# role :app, %w{deploy@example.com}
+# role :web, %w{deploy@example.com}
+# role :db,  %w{deploy@example.com}
+
+set :branch, ENV['BRANCH'] || 'master'
+
+set :rvm_type, :system
+set :rvm_custom_path, '/usr/share/rvm'
+
+server '3.140.6.193', user: fetch(:user), roles: %w{app db web}
 
 
 # role-based syntax
