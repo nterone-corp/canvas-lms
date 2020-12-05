@@ -13,8 +13,8 @@
 
 set :branch, ENV['BRANCH'] || 'master'
 
-set :rvm_type, :system
-set :rvm_custom_path, '/usr/share/rvm'
+# set :rvm_type, :system
+# set :rvm_custom_path, '/usr/share/rvm'
 
 server '3.140.6.193', user: fetch(:user), roles: %w{app db web}
 
