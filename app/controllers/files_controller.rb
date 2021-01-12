@@ -413,7 +413,7 @@ class FilesController < ApplicationController
     @attachment = @context.attachments.find(params[:id])
     @skip_crumb = true
     if @attachment.deleted?
-      flash[:notice] = t 'notices.deleted', "The file %{display_name} has been deleted", :display_name => @attachment.display_name
+      # flash[:notice] = t 'notices.deleted', "The file %{display_name} has been deleted", :display_name => @attachment.display_name
       return redirect_to dashboard_url
     end
     show
@@ -513,7 +513,7 @@ class FilesController < ApplicationController
           render status: 404, template: "shared/errors/404_message", formats: [:html]
           return
         end
-        flash[:notice] = t 'notices.deleted', "The file %{display_name} has been deleted", display_name: @attachment.display_name
+        # flash[:notice] = t 'notices.deleted', "The file %{display_name} has been deleted", display_name: @attachment.display_name
         if params[:preview] && @attachment.mime_class == 'image'
           redirect_to '/images/blank.png'
         elsif request.format == :json
